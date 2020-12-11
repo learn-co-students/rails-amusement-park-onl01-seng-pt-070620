@@ -1,0 +1,10 @@
+<%= form_for :user do |f| %>
+<%= f.label "Name" %>
+<%= f.collection_select :name, User.all, :id, :name , :id => "user_name"%><br>
+
+<%= f.label "Password" %>
+<%= f.password_field :password, :id => "password" %> <br>
+
+<%= f.submit "Sign In"%>
+
+<% end %>
