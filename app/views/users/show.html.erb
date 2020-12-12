@@ -1,0 +1,15 @@
+<h1>You Made It!</h1>
+
+<% if @user.admin == true %>
+  <h1>ADMIN</h1>
+<% end %>
+
+Name: <%= @user.name %>
+
+Tickets: <%= @user.tickets %>
+
+Mood: <%= @user.mood %>
+
+Height: <%= @user.height %> inches
+
+<%= link_to 'See attractions', attractions_path %>
