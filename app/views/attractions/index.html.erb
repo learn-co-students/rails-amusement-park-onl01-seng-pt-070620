@@ -1,3 +1,19 @@
-<%= @attractions.each do |attraction| %>
-<%= attraction.name %>
+<h1>Listing attractions</h1>
+<% @attractions.each do |attraction| %>
+<h3><%= attraction.name %></h3>
+    <li><%= attraction.tickets %></li>
+
+    <% if current_user.admin %>
+        <p><%= link_to "Show #{attraction.name}", attraction_path(attraction) %></p>
+    <% else %>
+        <%= link_to "Go on #{attraction.name}", attraction_path(attraction) %>
+    <% end %>
+
 <% end %>
+<br><br>
+<h4>Add A New Attraction:</h4>
+<p><%= link_to "New Attraction", new_attraction_path %></p>
+
+
+
+

@@ -13,6 +13,7 @@ class Ride < ActiveRecord::Base
                 :happiness => current_happiness,
                 :nausea => current_nausea
             )
+            "Thanks for riding the #{self.attraction.name}!"
         elsif 
             ticket_requirement && !height_requirement 
             "Sorry. " + not_tall_enough

@@ -1,15 +1,24 @@
-<h1>You Made It!</h1>
-
-<% if @user.admin == true %>
-  <h1>ADMIN</h1>
+<% if flash[:message] %>
+<h3 style="color:Red;"><%= flash[:message] %></h3>
 <% end %>
 
-Name: <%= @user.name %>
 
-Tickets: <%= @user.tickets %>
 
-Mood: <%= @user.mood %>
+<% if @user.admin == true %>
+  <h1>ADMIN STATUS</h1>
+<% end %>
 
-Height: <%= @user.height %> inches
+<label>Name: </label>
+<%= @user.name %>
 
-<%= link_to 'See attractions', attractions_path %>
+<% if @user.admin == false %>
+    <label>Tickets: </label>
+    <%= @user.tickets %>
+    <label>Mood: </label>
+    <%= @user.mood %>
+    <label>Height: </label>
+    <%= @user.height %> inches
+<% end %>
+
+<p><%= link_to 'See attractions', attractions_path %></p>
+

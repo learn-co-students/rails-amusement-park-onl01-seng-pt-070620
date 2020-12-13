@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
     skip_before_action :verify_user, only: [:new, :create]
 
-
-    def show
-        @user = User.find(params[:id])
-    end
     
     def new
         @user = User.new
+    end
+
+    def show
+        @user = User.find_by(id: params[:id])
     end
 
     def create
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:name, :password, :password_confirmation, :nausea, :happiness, :tickets, :height)
+        params.require(:user).permit(:name, :password, :nausea, :happiness, :tickets, :height, :admin, :mood)
     end
 end
 
