@@ -1,0 +1,24 @@
+<% if flash[:message] %>
+<h3 style="color:Red;"><%= flash[:message] %></h3>
+<% end %>
+
+
+
+<% if @user.admin == true %>
+  <h1>ADMIN STATUS</h1>
+<% end %>
+
+<label>Name: </label>
+<%= @user.name %>
+
+<% if @user.admin == false %>
+    <label>Tickets: </label>
+    <%= @user.tickets %>
+    <label>Mood: </label>
+    <%= @user.mood %>
+    <label>Height: </label>
+    <%= @user.height %> inches
+<% end %>
+
+<p><%= link_to 'See attractions', attractions_path %></p>
+
