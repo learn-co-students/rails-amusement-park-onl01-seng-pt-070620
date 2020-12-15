@@ -1,8 +1,10 @@
+<% if @user.admin %>
+    <h1>ADMIN</h1>
+<% end %>
 <h1><%= @user.name %></h1>
 
 <p>Mood: <%= @user.mood %></p>
 <p>Tickets: <%= @user.tickets %></p>
 <p>Height: <%= @user.height %></p>
 
-
-
+<p><%= link_to 'Log Out', 'session#destroy' %>
