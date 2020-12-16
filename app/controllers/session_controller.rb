@@ -1,8 +1,14 @@
 class SessionController < ApplicationController
     skip_before_action :verify_user, only: [:new, :create]
 
+    def destroy
+        session.destroy :user_id
+        redirect_to root_path
+    end
+    
     def new
         @user = User.new
+        @users = User.all
     end
 
     def create
@@ -12,11 +18,6 @@ class SessionController < ApplicationController
         else
             render 'new'
         end
-    end
-
-    def destroy
-        session.delete(@user.id)
-        redirect_to root_path
     end
 
 end

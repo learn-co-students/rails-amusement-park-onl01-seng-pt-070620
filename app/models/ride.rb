@@ -13,11 +13,11 @@ class Ride < ActiveRecord::Base
             :happiness => user_happiness
         )
         
-        if self.user.tickets < self.attraction.tickets && self.user.height < self.attraction.min_height
+        if user.tickets < attraction.tickets && user.height < attraction.min_height
             "Sorry. You do not have enough tickets to ride the #{attraction.name}. You are not tall enough to ride the #{attraction.name}."
-        elsif self.user.tickets < self.attraction.tickets
+        elsif user.tickets < attraction.tickets
             "Sorry. You do not have enough tickets to ride the #{attraction.name}."
-        else self.user.height < self.attraction.min_height
+        else user.height < attraction.min_height
             "Sorry. You are not tall enough to ride the Roller Coaster."
         end
     end
