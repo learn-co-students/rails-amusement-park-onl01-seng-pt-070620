@@ -2,7 +2,7 @@ class SessionController < ApplicationController
     skip_before_action :verify_user, only: [:new, :create]
 
     def destroy
-        session.destroy :user_id
+        session.destroy
         redirect_to root_path
     end
     
