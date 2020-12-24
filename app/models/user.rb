@@ -5,6 +5,6 @@ class User < ActiveRecord::Base
     has_secure_password
     
     def mood
-        self.nausea > self.happiness ? 'sad' : 'happy'
+        self.nausea.to_i > self.happiness.to_i ? 'sad' : 'happy'
     end 
 end
