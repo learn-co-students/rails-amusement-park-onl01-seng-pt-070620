@@ -4,10 +4,17 @@ class UsersController < ApplicationController
     end
   
     def signin
+      user = User.find_by(id: params["user"]["id"])
+      if user
+        session[:user_id] = user.id
+        redirect_to user_path(user)
+      else
+        redirect_to signin_path
+      end
     end
   
     def login
-      user = User.find_by(name: params[:user][:name])
+      user = User.find_by(id: params["user"]["id"])
       if user
         session[:user_id] = user.id
         redirect_to user_path(user)

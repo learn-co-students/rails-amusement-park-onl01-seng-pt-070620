@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
     def mood
         self.nausea.to_i > self.happiness.to_i ? 'sad' : 'happy'
     end 
+
 end
