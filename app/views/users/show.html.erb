@@ -1,0 +1,10 @@
+<% if @user.admin %>
+<strong>ADMIN</strong><br>
+Name: <%= @user.name%><br>
+
+<%else%>
+Name: <%= @user.name%><br>
+Tickets: <%= @user.tickets %><br>
+Mood: <%= @user.mood %><br>
+Height: <%= @user.height %>
+<% end %>
