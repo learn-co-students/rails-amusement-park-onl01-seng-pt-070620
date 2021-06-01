@@ -1,0 +1,18 @@
+<%= form_for @user do |f| %>
+<p>Name</p>
+<%= f.text_field :name %><br>
+<p>How nauseous are you? (1-5 scale)</p>
+<%= f.text_field :nausea %><br>
+<p>How happy are you? (1-5 scale)</p>
+<%= f.text_field :happiness %><br>
+<p>How many tickets do you have?</p>
+<%= f.text_field :tickets %><br>
+<p>Height (in inches)</p>
+<%= f.text_field :height %><br>
+Check box if you are a theme park owner 
+<%= f.check_box :admin %><br>
+<%= f.label :password %>
+<%= f.password_field :password %><br>
+<%= f.submit%><br>
+<% end %>
+
